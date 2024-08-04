@@ -61,7 +61,9 @@ ContentSparkAI is a web application designed to empower content creators and mar
 - **GPT/Claude API**: AI API that will generate content.
 - **Mongoose**: For database management.
 
-![Architecture Diagram](https://drive.google.com/uc?id=1I9WwDX2T2lhvX8StN3UTr21eFwbzUw4z)
+**Architecture**
+
+![Diagram](https://github.com/CS-179K/projectPPSS/blob/main/Burndown/cs179k.drawio.png?raw=true)
 
 ## Team Members
 - **Yuvraj Patadia** - [Yuvraj96](https://github.com/Yuvraj96)
