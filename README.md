@@ -62,7 +62,7 @@ ContentSparkAI is a web application designed to empower content creators and mar
 - **Mongoose**: For database management.
 
 ## Architecture
-![Diagram](https://github.com/CS-179K/projectPPSS/blob/main/Burndown/cs179k.drawio.png?raw=true)
+![Diagram](https://github.com/CS-179K/projectPPSS/blob/main/Burndown/arc.png?raw=true)
 
 ## Team Members
 - **Yuvraj Patadia** - [Yuvraj96](https://github.com/Yuvraj96)
