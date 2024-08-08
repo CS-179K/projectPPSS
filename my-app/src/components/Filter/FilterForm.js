@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Select, Input, Button, Card, Row, Col } from "antd";
+import { Form, Select, Button, Card, Row, Col } from "antd";
 
 const { Option } = Select;
 
@@ -11,7 +11,10 @@ const FilterForm = ({ onSave }) => {
   };
 
   return (
-    <Card title="Content Generation Filters">
+    <Card
+      title="Content Generation Filters"
+      style={{ maxHeight: "calc(100vh - 104px)", overflow: "auto" }}
+    >
       <Form form={form} onFinish={handleSave} layout="vertical">
         <Row gutter={16}>
           <Col span={12}>
@@ -64,21 +67,16 @@ const FilterForm = ({ onSave }) => {
         </Row>
 
         <Row gutter={16}>
-          <Col span={8}>
-            <Form.Item name="location" label="Location">
-              <Input placeholder="Enter location" />
-            </Form.Item>
-          </Col>
-          <Col span={8}>
+          <Col span={12}>
             <Form.Item name="gender" label="Gender">
               <Select placeholder="Select gender">
                 <Option value="male">Male</Option>
                 <Option value="female">Female</Option>
-                <Option value="other">Other</Option>
+                <Option value="all">All</Option>
               </Select>
             </Form.Item>
           </Col>
-          <Col span={8}>
+          <Col span={12}>
             <Form.Item name="incomeLevel" label="Income Level">
               <Select placeholder="Select income level">
                 <Option value="low">Low</Option>
@@ -138,11 +136,46 @@ const FilterForm = ({ onSave }) => {
 
         <Form.Item name="language" label="Language">
           <Select placeholder="Select language">
-            <Option value="english">English</Option>
-            <Option value="spanish">Spanish</Option>
-            <Option value="french">French</Option>
-            <Option value="german">German</Option>
-            <Option value="chinese">Chinese</Option>
+            <Option value="Arabic (ar)">Arabic (ar)</Option>
+            <Option value="Bengali (bn)">Bengali (bn)</Option>
+            <Option value="Bulgarian (bg)">Bulgarian (bg)</Option>
+            <Option value="Chinese (zh)">
+              Chinese (Simplified and Traditional) (zh)
+            </Option>
+            <Option value="Croatian (hr)">Croatian (hr)</Option>
+            <Option value="Czech (cs)">Czech (cs)</Option>
+            <Option value="Danish (da)">Danish (da)</Option>
+            <Option value="Dutch (nl)">Dutch (nl)</Option>
+            <Option value="English (en)">English (en)</Option>
+            <Option value="Estonian (et)">Estonian (et)</Option>
+            <Option value="Finnish (fi)">Finnish (fi)</Option>
+            <Option value="French (fr)">French (fr)</Option>
+            <Option value="German (de)">German (de)</Option>
+            <Option value="Greek (el)">Greek (el)</Option>
+            <Option value="Hebrew (iw)">Hebrew (iw)</Option>
+            <Option value="Hindi (hi)">Hindi (hi)</Option>
+            <Option value="Hungarian (hu)">Hungarian (hu)</Option>
+            <Option value="Indonesian (id)">Indonesian (id)</Option>
+            <Option value="Italian (it)">Italian (it)</Option>
+            <Option value="Japanese (ja)">Japanese (ja)</Option>
+            <Option value="Korean (ko)">Korean (ko)</Option>
+            <Option value="Latvian (lv)">Latvian (lv)</Option>
+            <Option value="Lithuanian (lt)">Lithuanian (lt)</Option>
+            <Option value="Norwegian (no)">Norwegian (no)</Option>
+            <Option value="Polish (pl)">Polish (pl)</Option>
+            <Option value="Portuguese (pt)">Portuguese (pt)</Option>
+            <Option value="Romanian (ro)">Romanian (ro)</Option>
+            <Option value="Russian (ru)">Russian (ru)</Option>
+            <Option value="Serbian (sr)">Serbian (sr)</Option>
+            <Option value="Slovak (sk)">Slovak (sk)</Option>
+            <Option value="Slovenian (sl)">Slovenian (sl)</Option>
+            <Option value="Spanish (es)">Spanish (es)</Option>
+            <Option value="Swahili (sw)">Swahili (sw)</Option>
+            <Option value="Swedish (sv)">Swedish (sv)</Option>
+            <Option value="Thai (th)">Thai (th)</Option>
+            <Option value="Turkish (tr)">Turkish (tr)</Option>
+            <Option value="Ukrainian (uk)">Ukrainian (uk)</Option>
+            <Option value="Vietnamese (vi)">Vietnamese (vi)</Option>
           </Select>
         </Form.Item>
 
