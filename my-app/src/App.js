@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ConfigProvider, Layout, theme } from "antd";
 import AppHeader from "./components/Header/AppHeader";
 import Home from "./components/Home/Home";
+import "./App.css";
 
 const { Content } = Layout;
 const { darkAlgorithm } = theme;
