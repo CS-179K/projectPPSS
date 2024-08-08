@@ -38,8 +38,8 @@ const PromptPanel = ({ filters, onSubmit }) => {
       selectedFilters.tone || "relevant to our requirement"
     }. Theme of our post should resemble ${
       selectedFilters.themes || selectedFilters.industry
-    }. Goal of this ${selectedFilters.contentType} content will be ${
-      selectedFilters.contentGoal
+    }. Goal of this ${selectedFilters.contentType || ""} content will be ${
+      selectedFilters.contentGoal || "as per our requirement"
     }. You response should be of ${
       selectedFilters.maxContentLength || "any"
     } length and of ${selectedFilters.language || "English"} language.
@@ -80,7 +80,7 @@ const PromptPanel = ({ filters, onSubmit }) => {
         rows={4}
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
-        placeholder="Enter your content request here..."
+        placeholder="Addition details you would like to add..."
         style={{
           resize: "none",
           border: "1px solid #424242",

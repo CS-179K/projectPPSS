@@ -6,7 +6,10 @@ import PromptPanel from "../PromptPanel/PromptPanel";
 const Home = () => {
   const [savedFilters, setSavedFilters] = useState(null);
 
-  const handleSaveFilters = (filters) => {
+  const handleSaveFilters = (filters, shouldSave) => {
+    if(shouldSave) {
+      // save to backend
+    }
     setSavedFilters(filters);
   };
 
@@ -17,7 +20,7 @@ const Home = () => {
   return (
     <Row gutter={16} style={{ padding: "20px" }}>
       <Col span={12}>
-        <FilterForm onSave={handleSaveFilters} />
+        <FilterForm onSave={handleSaveFilters} onChange={handleSaveFilters} />
       </Col>
       <Col span={12}>
         <PromptPanel filters={savedFilters} onSubmit={handleSubmit} />

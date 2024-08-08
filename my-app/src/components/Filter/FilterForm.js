@@ -7,7 +7,11 @@ const FilterForm = ({ onSave }) => {
   const [form] = Form.useForm();
 
   const handleSave = (values) => {
-    onSave(values);
+    onSave(values, true);
+  };
+
+  const handleChange = (values) => {
+    onSave(values, false);
   };
 
   return (
@@ -15,27 +19,41 @@ const FilterForm = ({ onSave }) => {
       title="Content Generation Filters"
       style={{ maxHeight: "calc(100vh - 104px)", overflow: "auto" }}
     >
-      <Form form={form} onFinish={handleSave} layout="vertical">
+      <Form form={form} onFinish={handleSave} onValuesChange={handleChange} layout="vertical">
         <Row gutter={16}>
           <Col span={12}>
-            <Form.Item name="contentType" label="Type of Content">
-              <Select placeholder="Select content type">
-                <Option value="blogPosts">Blog Posts</Option>
-                <Option value="adCampaigns">Ad Campaigns</Option>
-                <Option value="socialMediaPosts">Social Media Posts</Option>
-                <Option value="productDescriptions">
+            <Form.Item name="contentType" label="Type of Content" required>
+              <Select placeholder="Select content type" showSearch>
+                <Option value="blog Posts">Blog Posts</Option>
+                <Option value="ad Campaigns">Ad Campaigns</Option>
+                <Option value="social Media Posts">Social Media Posts</Option>
+                <Option value="product Descriptions">
                   Product Descriptions
                 </Option>
+                <Option value="email Newsletters">Email Newsletters</Option>
+                <Option value="press Releases">Press Releases</Option>
+                <Option value="white Papers">White Papers</Option>
+                <Option value="video Scripts">Video Scripts</Option>
+                <Option value="podcast Outlines">Podcast Outlines</Option>
+                <Option value="landing Pages">Landing Pages</Option>
               </Select>
             </Form.Item>
           </Col>
           <Col span={12}>
-            <Form.Item name="industry" label="Industry/Category">
-              <Select placeholder="Select industry">
+            <Form.Item name="industry" label="Industry/Category" required>
+              <Select placeholder="Select industry" showSearch>
                 <Option value="technology">Technology</Option>
                 <Option value="fashion">Fashion</Option>
                 <Option value="foodBeverage">Food & Beverage</Option>
                 <Option value="healthcare">Healthcare</Option>
+                <Option value="finance">Finance</Option>
+                <Option value="education">Education</Option>
+                <Option value="entertainment">Entertainment</Option>
+                <Option value="travel">Travel & Tourism</Option>
+                <Option value="automotive">Automotive</Option>
+                <Option value="realEstate">Real Estate</Option>
+                <Option value="sports">Sports & Fitness</Option>
+                <Option value="beauty">Beauty & Cosmetics</Option>
               </Select>
             </Form.Item>
           </Col>
@@ -44,7 +62,8 @@ const FilterForm = ({ onSave }) => {
         <Row gutter={16}>
           <Col span={12}>
             <Form.Item name="ageRange" label="Age Range of Audience">
-              <Select placeholder="Select age range">
+              <Select placeholder="Select age range" showSearch>
+                <Option value="under 13">Under 13</Option>
                 <Option value="13-17">13-17</Option>
                 <Option value="18-24">18-24</Option>
                 <Option value="25-34">25-34</Option>
@@ -56,11 +75,22 @@ const FilterForm = ({ onSave }) => {
           </Col>
           <Col span={12}>
             <Form.Item name="interests" label="Audience Interests">
-              <Select mode="multiple" placeholder="Select interests">
+              <Select mode="multiple" placeholder="Select interests" showSearch>
                 <Option value="gaming">Gaming</Option>
                 <Option value="travel">Travel</Option>
                 <Option value="fitness">Fitness</Option>
                 <Option value="technology">Technology</Option>
+                <Option value="cooking">Cooking</Option>
+                <Option value="fashion">Fashion</Option>
+                <Option value="music">Music</Option>
+                <Option value="movies">Movies & TV</Option>
+                <Option value="books">Books & Literature</Option>
+                <Option value="sports">Sports</Option>
+                <Option value="art">Art & Design</Option>
+                <Option value="photography">Photography</Option>
+                <Option value="diy">DIY & Crafts</Option>
+                <Option value="gardening">Gardening</Option>
+                <Option value="investing">Investing</Option>
               </Select>
             </Form.Item>
           </Col>
@@ -69,7 +99,7 @@ const FilterForm = ({ onSave }) => {
         <Row gutter={16}>
           <Col span={12}>
             <Form.Item name="gender" label="Gender">
-              <Select placeholder="Select gender">
+              <Select placeholder="Select gender" showSearch>
                 <Option value="male">Male</Option>
                 <Option value="female">Female</Option>
                 <Option value="all">All</Option>
@@ -78,7 +108,7 @@ const FilterForm = ({ onSave }) => {
           </Col>
           <Col span={12}>
             <Form.Item name="incomeLevel" label="Income Level">
-              <Select placeholder="Select income level">
+              <Select placeholder="Select income level" showSearch>
                 <Option value="low">Low</Option>
                 <Option value="medium">Medium</Option>
                 <Option value="high">High</Option>
@@ -90,20 +120,41 @@ const FilterForm = ({ onSave }) => {
         <Row gutter={16}>
           <Col span={12}>
             <Form.Item name="tone" label="Tone of Content">
-              <Select placeholder="Select tone">
+              <Select placeholder="Select tone" showSearch>
                 <Option value="professional">Professional</Option>
                 <Option value="casual">Casual</Option>
                 <Option value="humorous">Humorous</Option>
                 <Option value="inspirational">Inspirational</Option>
+                <Option value="formal">Formal</Option>
+                <Option value="friendly">Friendly</Option>
+                <Option value="authoritative">Authoritative</Option>
+                <Option value="empathetic">Empathetic</Option>
+                <Option value="urgent">Urgent</Option>
+                <Option value="nostalgic">Nostalgic</Option>
               </Select>
             </Form.Item>
           </Col>
           <Col span={12}>
             <Form.Item name="themes" label="Themes/Keywords">
-              <Select mode="tags" placeholder="Enter themes or keywords">
+              <Select
+                mode="tags"
+                placeholder="Enter themes or keywords"
+                showSearch
+              >
                 <Option value="sustainability">Sustainability</Option>
                 <Option value="innovation">Innovation</Option>
                 <Option value="community">Community</Option>
+                <Option value="wellness">Wellness</Option>
+                <Option value="digitalTransformation">
+                  Digital Transformation
+                </Option>
+                <Option value="diversity">Diversity & Inclusion</Option>
+                <Option value="artificialIntelligence">
+                  Artificial Intelligence
+                </Option>
+                <Option value="customerExperience">Customer Experience</Option>
+                <Option value="remoteWork">Remote Work</Option>
+                <Option value="cybersecurity">Cybersecurity</Option>
               </Select>
             </Form.Item>
           </Col>
@@ -112,11 +163,19 @@ const FilterForm = ({ onSave }) => {
         <Row gutter={16}>
           <Col span={12}>
             <Form.Item name="contentGoal" label="Content Goal">
-              <Select placeholder="Select content goal">
+              <Select placeholder="Select content goal" showSearch>
                 <Option value="brandAwareness">Brand Awareness</Option>
                 <Option value="leadGeneration">Lead Generation</Option>
                 <Option value="educational">Educational</Option>
                 <Option value="entertainment">Entertainment</Option>
+                <Option value="customerRetention">Customer Retention</Option>
+                <Option value="productLaunch">Product Launch</Option>
+                <Option value="thoughtLeadership">Thought Leadership</Option>
+                <Option value="salesConversion">Sales Conversion</Option>
+                <Option value="communityEngagement">
+                  Community Engagement
+                </Option>
+                <Option value="customerSupport">Customer Support</Option>
               </Select>
             </Form.Item>
           </Col>
@@ -125,7 +184,7 @@ const FilterForm = ({ onSave }) => {
               name="maxContentLength"
               label="Content Length (max words)"
             >
-              <Select placeholder="Select Max Content Length">
+              <Select placeholder="Select Max Content Length" showSearch>
                 <Option value="short">Short</Option>
                 <Option value="medium">Medium</Option>
                 <Option value="long">Long</Option>
@@ -135,7 +194,7 @@ const FilterForm = ({ onSave }) => {
         </Row>
 
         <Form.Item name="language" label="Language">
-          <Select placeholder="Select language">
+          <Select placeholder="Select language" showSearch>
             <Option value="Arabic (ar)">Arabic (ar)</Option>
             <Option value="Bengali (bn)">Bengali (bn)</Option>
             <Option value="Bulgarian (bg)">Bulgarian (bg)</Option>
@@ -181,7 +240,7 @@ const FilterForm = ({ onSave }) => {
 
         <Form.Item>
           <Button type="primary" htmlType="submit">
-            Apply Filters
+            Save Filters
           </Button>
         </Form.Item>
       </Form>
