@@ -1,5 +1,5 @@
 import { Layout, Menu } from "antd";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { HomeOutlined, HistoryOutlined, StarOutlined } from "@ant-design/icons";
 
 const { Header } = Layout;
@@ -15,7 +15,7 @@ const AppHeader = () => (
         <Link to="/history">History</Link>
       </Menu.Item>
       <Menu.Item key="favourites" icon={<StarOutlined />}>
-        <Link to="/favourites">Favourites</Link> 
+        <Link to="/favourites">Favourites</Link>
       </Menu.Item>
     </Menu>
   </Header>
