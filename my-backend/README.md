@@ -1,3 +1,7 @@
+For the frontend inside my-app:
+On your react app axios package is install. So
+Either npm i or npm install axios
+
 Step 1: Change directory
 cd my-backend
 
