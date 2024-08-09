@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { Form, Select, Button, Card, Row, Col } from "antd";
 
 const { Option } = Select;
@@ -6,8 +7,13 @@ const { Option } = Select;
 const FilterForm = ({ onSave }) => {
   const [form] = Form.useForm();
 
-  const handleSave = (values) => {
-    onSave(values, true);
+  const handleSave = async (values) => {
+    try {
+      await axios.post("http://localhost:5000/api/saveFilter", values);
+      onSave(values, true);
+    } catch (error) {
+      console.error("There was an error saving the data!", error);
+    }
   };
 
   const handleChange = (values) => {
