@@ -21,6 +21,12 @@ Server running on http://localhost:5000
 MongoDB connected
 
 --------------------------------------------
+
+npm outdate
+
+npm update
+
+
 To monitor the application
 npm install -g pm2
 

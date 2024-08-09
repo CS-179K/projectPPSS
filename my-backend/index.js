@@ -1,7 +1,7 @@
 require('dotenv').config(); // Load environment variables
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
+const cors = require('cors'); 
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const morgan = require('morgan');
@@ -88,6 +88,7 @@ const filterSchema = new mongoose.Schema({
   contentGoal: String,
   maxContentLength: String,
   language: String,
+  isFavourite: { type: Boolean, default: false }
 });
 
 const Filter = mongoose.model("Filter", filterSchema);
